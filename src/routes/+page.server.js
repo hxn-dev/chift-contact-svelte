@@ -18,7 +18,7 @@ export async function load({ params }) {
 	let records = [];
 
 	try {
-		records = await odoo.searchRead(`res.partner`);
+		records = await odoo.searchRead(`res.partner`, [], ['avatar_128', 'name', 'email', 'street', 'zip', 'country_id']);
 	} catch (error) {
 		console.error('Error searchRead: ', error);
 	}
