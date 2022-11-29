@@ -4,6 +4,7 @@
 
     export let data
     let rows
+    let error = false
 
     const settings = {
         sortable: true,
@@ -19,6 +20,10 @@
 
     let isMounted = false
     onMount(() => {
+        if (data.records.length <= 0) {
+            error = true
+            return
+        }
         isMounted = true
     })
 </script>
@@ -57,5 +62,7 @@
                 </tbody>
             </Datatable>
         </div>
+    {:else if error}
+        <div class="mt-4 py-2 px-4 bg-red-500 text-white uppercase rounded">Error while retrieving accounts</div>
     {/if}
 </div>
