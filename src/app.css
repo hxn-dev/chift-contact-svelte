@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html { font-family: 'Roboto', sans-serif; }
+html { font-family: 'Quicksand', sans-serif; }
 .avatar { @apply w-8 rounded-full; }
+
+
+
 th:first-child{width:72px;}
 td{text-align:center;padding:4px 0} 
